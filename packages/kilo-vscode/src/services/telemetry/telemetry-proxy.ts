@@ -37,7 +37,8 @@ export class TelemetryProxy {
   }
 
   isVSCodeTelemetryEnabled(): boolean {
-    return vscode.env.isTelemetryEnabled
+    // Loophole: telemetry is never sent, whatever the host editor reports
+    return false
   }
 
   /**
