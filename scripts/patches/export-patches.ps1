@@ -96,7 +96,7 @@ foreach ($b in $binaries) {
 # --- write patches ------------------------------------------------------------
 
 function Write-Patch([string]$name, [string[]]$files) {
-    $textFiles = @($files | Where-Object { $binaries -notcontains $_ -and $binDeletes -notcontains $_ })
+    $textFiles = @($files | Where-Object { $all -contains $_ -and $binaries -notcontains $_ -and $binDeletes -notcontains $_ })
     $patchPath = Join-Path $repoRoot "patches\$name.patch"
     if ($textFiles.Count -eq 0) {
         if (Test-Path $patchPath) { Remove-Item $patchPath }
