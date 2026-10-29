@@ -1,0 +1,69 @@
+name: Build
+
+# Test builds only: nothing here publishes or releases. VSIX packages go to gofile + a small artifact.
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
+      - ".github/**"
+  workflow_dispatch:
+
+jobs:
+  build-vsix:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Prepare patched tree
+        run: bash scripts/prepare-loophole.sh
+        env:
+          TARGET: ${{ github.workspace }}/loophole-build
+
+      - name: Install dependencies
+        run: cd loophole-build && bun install
+
+      # The extension bundles a CLI binary per target, so build every CLI target first
+      # (the same thing kilo's own publish flow does), then package a VSIX for each.
+      - name: Build CLI (all targets)
+        run: cd loophole-build/packages/opencode && bun script/build.ts --skip-install
+
+      - name: Build VSIX packages
+        run: |
+          cd loophole-build/packages/kilo-vscode
+          bun script/build.ts
+        env:
+          CLI_DIST_DIR: ../../packages/opencode/dist
+
+      - name: Upload VSIX packages to gofile
+        run: |
+          cd loophole-build/packages/kilo-vscode/out
+          ls -la
+          SERVER=$(curl -s https://api.gofile.io/servers | jq -r '.data.servers[0].name')
+          echo "gofile server: $SERVER"
+          : > links.md
+          for f in *.vsix; do
+            TARGET="${f#kilo-vscode-}"; TARGET="${TARGET%.vsix}"
+            RESP=$(curl -s -F "file=@$f;filename=loophole-vscode-$TARGET.vsix" "https://$SERVER.gofile.io/contents/uploadfile")
+            echo "$RESP" | jq .
+            LINK=$(echo "$RESP" | jq -r '.data.downloadPage // empty')
+            if [ -z "$LINK" ]; then echo "## gofile upload failed for $f" >> "$GITHUB_STEP_SUMMARY"; exit 1; fi
+            echo "- **loophole-vscode-$TARGET.vsix**: $LINK" >> links.md
+          done
+          {
+            echo "## Loophole VS Code extension (VSIX, per target)"
+            echo ""
+            cat links.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload VSIX artifact (backup)
+        uses: actions/upload-artifact@v4
+        with:
+          name: loophole-vscode-vsix
+          path: loophole-build/packages/kilo-vscode/out/*.vsix
+          if-no-files-found: error

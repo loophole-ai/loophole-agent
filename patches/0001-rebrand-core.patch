@@ -1,0 +1,667 @@
+diff --git a/packages/kilo-vscode/assets/icons/kilo-dark.svg b/packages/kilo-vscode/assets/icons/kilo-dark.svg
+index 931bce0adb..a771d61919 100644
+--- a/packages/kilo-vscode/assets/icons/kilo-dark.svg
++++ b/packages/kilo-vscode/assets/icons/kilo-dark.svg
+@@ -1,4 +1,4 @@
+ <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+-<path d="M512 0H0V512H512V0Z" fill="black"/>
+-<path d="M512 512H0V0H512V512ZM322.783 322.784H278.261V392.747L308.472 422.958H378.435V378.437H322.782L322.783 322.784ZM422.957 308.474L392.746 278.263H322.783V322.784H378.435L378.435 378.437H422.957L422.957 308.474ZM233.739 278.263H189.217V322.784H233.739V278.263ZM89.0435 392.747L119.254 422.958H233.739V378.437H133.565V278.263H89.043L89.0435 392.747ZM372.538 189.217V119.254L342.327 89.0435H278.261V133.565H328.017V189.217H278.261V233.739H422.957V189.217H372.538ZM133.565 89.0435H89.0435V233.739H133.565V183.652H189.218V233.739H233.74V183.652L189.218 139.13H133.565V89.0435ZM233.739 89.0435H189.217L189.218 139.13H233.739V89.0435Z" fill="#FFDD00"/>
++<rect width="512" height="512" rx="114" fill="#FFFFFF"/>
++<path d="M209.50,422.51C187.15,417.85,170.91,402.95,162.28,379.20C149.84,344.94,149.02,300.64,159.63,236.50C160.45,231.55,161.52,225.03,162.01,222.00C164.12,208.97,166.10,199.03,173.05,166.65C175.06,157.29,188.85,102.12,192.78,87.74C193.80,84.02,195.05,80.55,195.56,80.04C196.51,79.09,251.67,78.34,252.59,79.26C252.86,79.53,252.64,82.39,252.10,85.63C245.61,124.22,244.67,130.09,242.99,142.50C240.07,164.21,238.74,175.40,237.05,192.50C236.51,198.00,235.62,207.00,235.07,212.50C234.53,218.00,233.61,229.47,233.04,238.00C232.46,246.53,231.54,259.82,231.00,267.53C229.75,285.12,229.72,298.71,230.93,299.45C231.43,299.77,232.90,299.63,234.18,299.14C235.45,298.65,238.30,297.69,240.50,297.00C261.72,290.35,310.67,259.90,357.42,224.28C361.23,221.38,364.55,219.22,364.81,219.47C365.26,219.93,364.31,222.35,356.94,239.50C350.76,253.86,344.58,279.61,343.50,295.50C341.48,325.02,354.77,348.90,378.49,358.38C381.79,359.70,384.61,361.39,384.75,362.14C385.23,364.74,351.97,385.10,328.62,396.49C298.82,411.04,274.83,418.75,246.31,422.94C236.91,424.33,217.09,424.09,209.50,422.51Z" fill="#0B0B0C" fill-rule="evenodd"/>
+ </svg>
+diff --git a/packages/kilo-vscode/assets/icons/kilo-light.svg b/packages/kilo-vscode/assets/icons/kilo-light.svg
+index ff5f847dcf..0077825c4e 100644
+--- a/packages/kilo-vscode/assets/icons/kilo-light.svg
++++ b/packages/kilo-vscode/assets/icons/kilo-light.svg
+@@ -1,4 +1,4 @@
+ <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+-<path d="M512 0H0V512H512V0Z" fill="black"/>
+-<path d="M322 377H377V421H307.857L278 391.143V322H322V377ZM421 307.857L391.143 278H322V322L377 322V377H421V307.857ZM234 278H190V322H234V278ZM91 391.143L120.857 421H234V377H135V278H91V391.143ZM371.172 189.999V120.856L341.315 90.9995H278V135H327.172V189.999H278V233.999H421V189.999H371.172ZM135 91H91V233.999H135V184.5H190V233.999H234V184.5L190 140.5H135V91ZM234 91H190V140.5H234V91Z" fill="#FFDD00"/>
++<rect width="512" height="512" rx="114" fill="#0B0B0C"/>
++<path d="M209.50,422.51C187.15,417.85,170.91,402.95,162.28,379.20C149.84,344.94,149.02,300.64,159.63,236.50C160.45,231.55,161.52,225.03,162.01,222.00C164.12,208.97,166.10,199.03,173.05,166.65C175.06,157.29,188.85,102.12,192.78,87.74C193.80,84.02,195.05,80.55,195.56,80.04C196.51,79.09,251.67,78.34,252.59,79.26C252.86,79.53,252.64,82.39,252.10,85.63C245.61,124.22,244.67,130.09,242.99,142.50C240.07,164.21,238.74,175.40,237.05,192.50C236.51,198.00,235.62,207.00,235.07,212.50C234.53,218.00,233.61,229.47,233.04,238.00C232.46,246.53,231.54,259.82,231.00,267.53C229.75,285.12,229.72,298.71,230.93,299.45C231.43,299.77,232.90,299.63,234.18,299.14C235.45,298.65,238.30,297.69,240.50,297.00C261.72,290.35,310.67,259.90,357.42,224.28C361.23,221.38,364.55,219.22,364.81,219.47C365.26,219.93,364.31,222.35,356.94,239.50C350.76,253.86,344.58,279.61,343.50,295.50C341.48,325.02,354.77,348.90,378.49,358.38C381.79,359.70,384.61,361.39,384.75,362.14C385.23,364.74,351.97,385.10,328.62,396.49C298.82,411.04,274.83,418.75,246.31,422.94C236.91,424.33,217.09,424.09,209.50,422.51Z" fill="#FFFFFF" fill-rule="evenodd"/>
+ </svg>
+diff --git a/packages/kilo-vscode/package.json b/packages/kilo-vscode/package.json
+index 22285929de..48517f330c 100644
+--- a/packages/kilo-vscode/package.json
++++ b/packages/kilo-vscode/package.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "kilo-code",
+-  "displayName": "Kilo Code: AI Coding Agent, Copilot, and Autocomplete",
+-  "description": "Open Source AI coding agent that generates code from natural language, automates tasks, and runs terminal commands. Features inline autocomplete, browser automation, automated refactoring, and custom modes for planning, coding, and debugging. Supports 500+ AI models including Claude (Anthropic), Gemini, Grok, GPT, Codex and GLM.",
++  "displayName": "Loophole Agent",
++  "description": "AI coding agent built into the Loophole editor. Generates code from natural language, automates tasks, and runs terminal commands, with inline autocomplete and custom modes for planning, coding, and debugging.",
+   "version": "7.8.18",
+   "icon": "assets/icons/logo-outline-black.png",
+   "galleryBanner": {
+@@ -19,7 +19,7 @@
+   },
+   "license": "MIT",
+   "author": {
+-    "name": "Kilo Code"
++    "name": "Loophole"
+   },
+   "categories": [
+     "AI",
+@@ -31,7 +31,7 @@
+   ],
+   "keywords": [
+     "kilo",
+-    "Kilo Code",
++    "Loophole",
+     "kilocode",
+     "ai",
+     "agent",
+@@ -82,7 +82,7 @@
+     ],
+     "icons": {
+       "kilo-logo": {
+-        "description": "Kilo Code logo",
++        "description": "Loophole logo",
+         "default": {
+           "fontPath": "assets/icons/kilo-icon-font.woff2",
+           "fontCharacter": "\\F101"
+@@ -93,7 +93,7 @@
+       "activitybar": [
+         {
+           "id": "kilo-code-ActivityBar",
+-          "title": "Kilo Code",
++          "title": "Loophole",
+           "icon": "assets/icons/kilo-light.png",
+           "darkIcon": "assets/icons/kilo-dark.png"
+         }
+@@ -104,7 +104,7 @@
+         {
+           "type": "webview",
+           "id": "kilo-code.SidebarProvider",
+-          "name": "Kilo Code"
++          "name": "Loophole"
+         }
+       ]
+     },
+@@ -112,53 +112,53 @@
+       {
+         "command": "kilo-code.new.plusButtonClicked",
+         "title": "New Task",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(add)"
+       },
+       {
+         "command": "kilo-code.new.closeTask",
+         "title": "Close Task",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.closeAllTasks",
+         "title": "Close All Tasks",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManagerOpen",
+         "title": "Agent Manager",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(organization)"
+       },
+       {
+         "command": "kilo-code.new.marketplaceButtonClicked",
+         "title": "Marketplace",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(extensions)"
+       },
+       {
+         "command": "kilo-code.new.historyButtonClicked",
+         "title": "History",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(history)"
+       },
+       {
+         "command": "kilo-code.new.profileButtonClicked",
+         "title": "Profile",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(account)"
+       },
+       {
+         "command": "kilo-code.new.settingsButtonClicked",
+         "title": "Settings",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(settings-gear)"
+       },
+       {
+         "command": "kilo-code.new.settingsSearch",
+         "title": "Search Settings",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(search)"
+       },
+       {
+@@ -194,7 +194,7 @@
+       {
+         "command": "kilo-code.new.openInTab",
+         "title": "Open in Tab",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": {
+           "light": "assets/icons/kilo-light.svg",
+           "dark": "assets/icons/kilo-dark.svg"
+@@ -203,218 +203,218 @@
+       {
+         "command": "kilo-code.new.openBrowser",
+         "title": "Open Integrated Browser",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(globe)"
+       },
+       {
+         "command": "kilo-code.new.showChanges",
+         "title": "Show Changes",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.showMemory",
+         "title": "Show Project Memory",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.toggleMemory",
+         "title": "Toggle Project Memory",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.toggleCaffeination",
+         "title": "Toggle Keep Awake",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.autocomplete.generateSuggestions",
+         "title": "Generate Suggested Edits",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.autocomplete.cancelSuggestions",
+         "title": "Cancel Suggested Edits",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.autocomplete.nextEdit.acceptOrJump",
+         "title": "Next Edit: Accept or Jump to Suggested Edit",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.autocomplete.nextEdit.dismiss",
+         "title": "Next Edit: Dismiss Pending Suggestion",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.previousSession",
+         "title": "Agent Manager: Previous Session",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.nextSession",
+         "title": "Agent Manager: Next Session",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.previousTab",
+         "title": "Previous Session Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.nextTab",
+         "title": "Next Session Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.previousTerminal",
+         "title": "Agent Manager: Previous Terminal",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.nextTerminal",
+         "title": "Agent Manager: Next Terminal",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.diagnostics",
+         "title": "Agent Manager: Show Worktree Diagnostics",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.search",
+         "title": "Agent Manager: Search Worktrees and Sessions",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.showTerminal",
+         "title": "Agent Manager: Focus Terminal",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(terminal)"
+       },
+       {
+         "command": "kilo-code.new.agentManager.runScript",
+         "title": "Agent Manager: Run Script",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(play)"
+       },
+       {
+         "command": "kilo-code.new.agentManager.toggleDiff",
+         "title": "Agent Manager: Toggle Diff Panel",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(diff)"
+       },
+       {
+         "command": "kilo-code.new.agentManager.showShortcuts",
+         "title": "Agent Manager: Show Keyboard Shortcuts",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": "$(keyboard)"
+       },
+       {
+         "command": "kilo-code.new.agentManager.newTab",
+         "title": "Agent Manager: New Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.newTerminalTab",
+         "title": "Agent Manager: New Terminal Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.newSideTerminal",
+         "title": "Agent Manager: New Sidebar Terminal Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.closeTab",
+         "title": "Agent Manager: Close Tab",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.newWorktree",
+         "title": "Agent Manager: Configure New Worktree",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.quickWorktree",
+         "title": "Agent Manager: New Worktree",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.openWorktree",
+         "title": "Agent Manager: Open Worktree",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.updateFromBase",
+         "title": "Agent Manager: Update from base",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "enablement": "activeWebviewPanelId == 'kilo-code.new.AgentManagerPanel'"
+       },
+       {
+         "command": "kilo-code.new.agentManager.openPR",
+         "title": "Agent Manager: Open Pull Request",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.closeWorktree",
+         "title": "Agent Manager: Close Worktree",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.advancedWorktree",
+         "title": "Agent Manager: Configure New Worktree",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo1",
+         "title": "Agent Manager: Jump to Item 1",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo2",
+         "title": "Agent Manager: Jump to Item 2",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo3",
+         "title": "Agent Manager: Jump to Item 3",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo4",
+         "title": "Agent Manager: Jump to Item 4",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo5",
+         "title": "Agent Manager: Jump to Item 5",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo6",
+         "title": "Agent Manager: Jump to Item 6",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo7",
+         "title": "Agent Manager: Jump to Item 7",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo8",
+         "title": "Agent Manager: Jump to Item 8",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.agentManager.jumpTo9",
+         "title": "Agent Manager: Jump to Item 9",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.generateCommitMessage",
+         "title": "Generate Commit Message",
+-        "category": "Kilo Code",
++        "category": "Loophole",
+         "icon": {
+           "light": "assets/icons/kilo-light.svg",
+           "dark": "assets/icons/kilo-dark.svg"
+@@ -423,87 +423,87 @@
+       {
+         "command": "kilo-code.new.explainCode",
+         "title": "Explain Code",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.fixCode",
+         "title": "Fix Code",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.improveCode",
+         "title": "Improve Code",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.addToContext",
+         "title": "Add to Context",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.terminalAddToContext",
+         "title": "Add Terminal Content to Context",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.terminalFixCommand",
+         "title": "Fix This Command",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.terminalExplainCommand",
+         "title": "Explain This Command",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.focusChatInput",
+         "title": "Focus Chat Input",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.toggleChatSearch",
+         "title": "Toggle Chat Search",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.cycleAgentMode",
+         "title": "Cycle Agent Mode",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.cyclePreviousAgentMode",
+         "title": "Cycle Previous Agent Mode",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.toggleAutoApprove",
+         "title": "Toggle Auto-Approve",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.generateTerminalCommand",
+         "title": "Generate Terminal Command",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.takeHeapSnapshot",
+         "title": "Take Heap Snapshot",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       },
+       {
+         "command": "kilo-code.new.reload",
+         "title": "Reload Config and Skills",
+-        "category": "Kilo Code"
++        "category": "Loophole"
+       }
+     ],
+     "submenus": [
+       {
+         "id": "kilo-code.new.editorContextMenu",
+-        "label": "Kilo Code"
++        "label": "Loophole"
+       },
+       {
+         "id": "kilo-code.new.terminalContextMenu",
+-        "label": "Kilo Code"
++        "label": "Loophole"
+       }
+     ],
+     "menus": {
+@@ -908,12 +908,12 @@
+       }
+     ],
+     "configuration": {
+-      "title": "Kilo Code",
++      "title": "Loophole",
+       "properties": {
+         "kilo-code.new.language": {
+           "type": "string",
+           "default": "",
+-          "description": "Override the UI language for Kilo Code (e.g. en, de, ja). Empty means use VS Code's display language.",
++          "description": "Override the UI language for Loophole (e.g. en, de, ja). Empty means use VS Code's display language.",
+           "enum": [
+             "",
+             "en",
+@@ -966,7 +966,7 @@
+         "kilo-code.new.languageCommitMessage": {
+           "type": "string",
+           "default": "sync",
+-          "description": "Language used for AI-generated commit messages. Choose 'sync' to follow the Kilo Code UI language, or select a specific language.",
++          "description": "Language used for AI-generated commit messages. Choose 'sync' to follow the Loophole UI language, or select a specific language.",
+           "enum": [
+             "sync",
+             "en",
+@@ -1144,7 +1144,7 @@
+         "kilo-code.new.autoApprove.enabled": {
+           "type": "boolean",
+           "default": false,
+-          "description": "Start Kilo Code with the main auto-approve toggle enabled. When enabled, permission prompts are approved automatically. Sandbox escalation prompts are always excluded."
++          "description": "Start Loophole with the main auto-approve toggle enabled. When enabled, permission prompts are approved automatically. Sandbox escalation prompts are always excluded."
+         },
+         "kilo-code.new.maxCost": {
+           "type": "number",
+@@ -1157,7 +1157,7 @@
+           "default": 13,
+           "minimum": 10,
+           "maximum": 24,
+-          "description": "Font size in pixels for the Kilo Code webview UI."
++          "description": "Font size in pixels for the Loophole webview UI."
+         },
+         "kilo-code.new.browserAutomation.enabled": {
+           "type": "boolean",
+diff --git a/packages/kilo-vscode/script/loophole-brand.ts b/packages/kilo-vscode/script/loophole-brand.ts
+new file mode 100644
+index 0000000000..1487d7579d
+--- /dev/null
++++ b/packages/kilo-vscode/script/loophole-brand.ts
+@@ -0,0 +1,55 @@
++// Re-applies Loophole's text branding on top of upstream Kilo Code. Idempotent: safe to run after every upstream merge.
++//
++//   bun packages/kilo-vscode/script/loophole-brand.ts
++//
++// If upstream changed one of the lines below, this fails loudly instead of silently skipping it:
++// open the file, apply the change by hand, and update the matching `from` string here.
++import { readFileSync, writeFileSync } from "node:fs"
++import { fileURLToPath } from "node:url"
++import path from "node:path"
++
++const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
++const file = (p: string) => path.join(root, p)
++
++// 1. package.json: user-visible text only. Ids, command names and setting keys are untouched.
++const pkgPath = file("package.json")
++const pkg = JSON.parse(readFileSync(pkgPath, "utf8"))
++const walk = (v: unknown): unknown =>
++  Array.isArray(v)
++    ? v.map(walk)
++    : v && typeof v === "object"
++      ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, walk(x)]))
++      : typeof v === "string"
++        ? v.replaceAll("Kilo Code", "Loophole")
++        : v
++const branded = walk(pkg) as Record<string, unknown>
++branded.displayName = "Loophole Agent"
++branded.description =
++  "AI coding agent built into the Loophole editor. Generates code from natural language, automates tasks, and runs terminal commands, with inline autocomplete and custom modes for planning, coding, and debugging."
++writeFileSync(pkgPath, JSON.stringify(branded, null, 2) + "\n")
++
++// 2. Telemetry is never sent, whatever the host editor reports.
++function edit(rel: string, from: string, to: string) {
++  const p = file(rel)
++  const src = readFileSync(p, "utf8")
++  if (src.includes(to)) return // already applied
++  if (!src.includes(from)) throw new Error(`loophole-brand: expected code not found in ${rel}; upstream changed it. Update this script.`)
++  writeFileSync(p, src.replace(from, to))
++}
++edit(
++  "src/services/cli-backend/server-manager.ts",
++  'KILO_TELEMETRY_LEVEL: vscode.env.isTelemetryEnabled ? "all" : "off",',
++  'KILO_TELEMETRY_LEVEL: "off", // Loophole: telemetry is never sent',
++)
++edit(
++  "src/services/telemetry/telemetry-proxy.ts",
++  "  isVSCodeTelemetryEnabled(): boolean {\n    return vscode.env.isTelemetryEnabled\n  }",
++  "  isVSCodeTelemetryEnabled(): boolean {\n    // Loophole: telemetry is never sent, whatever the host editor reports\n    return false\n  }",
++)
++
++// 3. Keep the unit test that pins the command category in sync with the branding above.
++const testPath = file("tests/unit/extension-arch.test.ts")
++const t = readFileSync(testPath, "utf8")
++writeFileSync(testPath, t.replaceAll('category: "Kilo Code"', 'category: "Loophole"'))
++
++console.log("loophole-brand: done")
+diff --git a/packages/kilo-vscode/src/services/cli-backend/server-manager.ts b/packages/kilo-vscode/src/services/cli-backend/server-manager.ts
+index 8735d69a38..504050ef9a 100644
+--- a/packages/kilo-vscode/src/services/cli-backend/server-manager.ts
++++ b/packages/kilo-vscode/src/services/cli-backend/server-manager.ts
+@@ -154,7 +154,7 @@ export class ServerManager {
+           KILO_ENABLE_QUESTION_TOOL: "true",
+           KILOCODE_FEATURE: "vscode-extension",
+           ...indexingEnv,
+-          KILO_TELEMETRY_LEVEL: vscode.env.isTelemetryEnabled ? "all" : "off",
++          KILO_TELEMETRY_LEVEL: "off", // Loophole: telemetry is never sent
+           KILO_APP_NAME: "kilo-code",
+           KILO_EDITOR_NAME: vscode.env.appName,
+           KILO_PLATFORM: "vscode",
+diff --git a/packages/kilo-vscode/src/services/telemetry/telemetry-proxy.ts b/packages/kilo-vscode/src/services/telemetry/telemetry-proxy.ts
+index 5e4ef1c0e3..7839f5a165 100644
+--- a/packages/kilo-vscode/src/services/telemetry/telemetry-proxy.ts
++++ b/packages/kilo-vscode/src/services/telemetry/telemetry-proxy.ts
+@@ -37,7 +37,8 @@ export class TelemetryProxy {
+   }
+ 
+   isVSCodeTelemetryEnabled(): boolean {
+-    return vscode.env.isTelemetryEnabled
++    // Loophole: telemetry is never sent, whatever the host editor reports
++    return false
+   }
+ 
+   /**
+diff --git a/packages/kilo-vscode/tests/unit/extension-arch.test.ts b/packages/kilo-vscode/tests/unit/extension-arch.test.ts
+index 9c55bbc28f..a56c7eab8e 100644
+--- a/packages/kilo-vscode/tests/unit/extension-arch.test.ts
++++ b/packages/kilo-vscode/tests/unit/extension-arch.test.ts
+@@ -203,11 +203,11 @@ describe("Extension — package.json command sync", () => {
+     const commands = pkg.contributes?.commands ?? []
+     expect(commands).toEqual(
+       expect.arrayContaining([
+-        expect.objectContaining({ command: "kilo-code.new.closeTask", title: "Close Task", category: "Kilo Code" }),
++        expect.objectContaining({ command: "kilo-code.new.closeTask", title: "Close Task", category: "Loophole" }),
+         expect.objectContaining({
+           command: "kilo-code.new.closeAllTasks",
+           title: "Close All Tasks",
+-          category: "Kilo Code",
++          category: "Loophole",
+         }),
+       ]),
+     )
