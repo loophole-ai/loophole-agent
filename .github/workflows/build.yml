@@ -41,7 +41,7 @@ jobs:
           echo "$RUNNER_TEMP/zig-linux-x86_64-0.14.0" >> "$GITHUB_PATH"
 
       - name: Build CLI (all targets)
-        run: cd loophole-build/packages/opencode && bun script/build.ts --skip-install
+        run: cd loophole-build/packages/opencode && bun script/build.ts
 
       - name: Build VSIX packages
         run: |
