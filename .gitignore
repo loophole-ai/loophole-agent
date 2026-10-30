@@ -1,0 +1,10 @@
+# Build tree produced by get_repo.sh (upstream Kilo at the pin)
+/kilo/
+
+# Legacy tree location, kept ignored so an old checkout cannot be committed
+/loophole-agent-build/
+
+node_modules/
+.bun-cache/
+.DS_Store
+*.log

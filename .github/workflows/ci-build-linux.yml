@@ -1,13 +1,31 @@
-name: Build
+name: CI - Build - Linux
 
-# Test builds only: nothing here publishes or releases. VSIX packages go to gofile + a small artifact.
+# The agent is cross-compiled: one Linux runner builds the CLI for every target
+# and packages every VSIX target from that dist. Upstream Kilo's own publish
+# workflow builds the VSIX on Linux too, so there is no per-OS split here.
+#
+# Same shape as the other Loophole repos: clone upstream at the pin, apply
+# patches, build, upload.
+
 on:
   push:
     branches: [main]
     paths-ignore:
       - "**/*.md"
-      - ".github/**"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
   workflow_dispatch:
+
+permissions: {}
+
+env:
+  APP_NAME: Loophole
+  BINARY_NAME: loophole
+  ORG_NAME: loophole-ai
+  GH_REPO_PATH: ${{ github.repository }}
+  OS_NAME: linux
 
 jobs:
   build-vsix:
@@ -17,20 +35,19 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: oven-sh/setup-bun@v2
 
-      - name: Prepare patched tree
-        run: bash scripts/prepare-loophole.sh
-        env:
-          TARGET: ${{ github.workspace }}/loophole-build
+      - name: Clone upstream Kilo
+        run: bash ./get_repo.sh
 
-      - name: Install dependencies
-        run: cd loophole-build && bun install
+      - name: Apply patches and assets
+        run: bash ./prepare_src.sh
 
-      # The extension bundles a CLI binary per target, so build every CLI target first
-      # (the same thing kilo's own publish flow does), then package a VSIX for each.
-      # Building Linux targets needs Zig for the bundled Bubblewrap sandbox helper.
+      # Building the Linux CLI targets needs Zig for the bundled Bubblewrap
+      # sandbox helper.
       - name: Setup Zig for Linux sandbox helpers
         run: |
           curl --fail --location --retry 3 \
@@ -40,19 +57,12 @@ jobs:
           tar -xJf "$RUNNER_TEMP/zig.tar.xz" -C "$RUNNER_TEMP"
           echo "$RUNNER_TEMP/zig-linux-x86_64-0.14.0" >> "$GITHUB_PATH"
 
-      - name: Build CLI (all targets)
-        run: cd loophole-build/packages/opencode && bun script/build.ts
-
-      - name: Build VSIX packages
-        run: |
-          cd loophole-build/packages/kilo-vscode
-          bun script/build.ts
-        env:
-          CLI_DIST_DIR: ../../packages/opencode/dist
+      - name: Build CLI and VSIX packages
+        run: bash ./build.sh
 
       - name: Upload VSIX packages to gofile
         run: |
-          cd loophole-build/packages/kilo-vscode/out
+          cd kilo/packages/kilo-vscode/out
           ls -la
           SERVER=$(curl -s https://api.gofile.io/servers | jq -r '.data.servers[0].name')
           echo "gofile server: $SERVER"
@@ -75,5 +85,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: loophole-vscode-vsix
-          path: loophole-build/packages/kilo-vscode/out/*.vsix
+          path: kilo/packages/kilo-vscode/out/*.vsix
           if-no-files-found: error
